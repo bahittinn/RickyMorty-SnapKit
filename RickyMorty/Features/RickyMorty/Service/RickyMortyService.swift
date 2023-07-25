@@ -5,7 +5,7 @@
 //  Created by Bahittin on 25.07.2023.
 //
 
-import Foundation
+import Alamofire
 
 enum RickyMortyServiceEndPoint: String {
     case BASE_URL = "https://rickandmortyapi.com/api"
@@ -18,6 +18,6 @@ protocol IRickyMortyService {
 
 struct RickyMortyService: IRickyMortyService {
     func fetchAllDatas() {
-        
+        AF.request("")
     }
 }
