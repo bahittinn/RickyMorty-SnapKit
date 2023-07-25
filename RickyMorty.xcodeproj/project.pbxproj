@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6422D7122A704BB900F63B9D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6422D7112A704BB900F63B9D /* SnapKit */; };
+		6422D7142A70550200F63B9D /* RickyMortyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6422D7132A70550200F63B9D /* RickyMortyService.swift */; };
+		6422D7162A70551D00F63B9D /* RickyMortyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6422D7152A70551D00F63B9D /* RickyMortyModel.swift */; };
 		64A734542A70437200CE84EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A734532A70437200CE84EA /* AppDelegate.swift */; };
 		64A734562A70437200CE84EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A734552A70437200CE84EA /* SceneDelegate.swift */; };
 		64A734582A70437200CE84EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A734572A70437200CE84EA /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6422D7132A70550200F63B9D /* RickyMortyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyMortyService.swift; sourceTree = "<group>"; };
+		6422D7152A70551D00F63B9D /* RickyMortyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyMortyModel.swift; sourceTree = "<group>"; };
 		64A734502A70437200CE84EA /* RickyMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickyMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A734532A70437200CE84EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64A734552A70437200CE84EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		64A7346A2A7046C800CE84EA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6422D7132A70550200F63B9D /* RickyMortyService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		64A7346B2A7046D200CE84EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6422D7152A70551D00F63B9D /* RickyMortyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,10 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6422D7162A70551D00F63B9D /* RickyMortyModel.swift in Sources */,
 				64A734582A70437200CE84EA /* ViewController.swift in Sources */,
 				64A7346F2A70470100CE84EA /* RickyMortyViewController.swift in Sources */,
 				64A734542A70437200CE84EA /* AppDelegate.swift in Sources */,
 				64A734562A70437200CE84EA /* SceneDelegate.swift in Sources */,
+				6422D7142A70550200F63B9D /* RickyMortyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
