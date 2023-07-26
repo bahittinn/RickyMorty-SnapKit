@@ -10,6 +10,10 @@ import Alamofire
 enum RickyMortyServiceEndPoint: String {
     case BASE_URL = "https://rickandmortyapi.com/api"
     case PATH     = "/character"
+    
+    static func characterPath() -> String {
+        return "\(BASE_URL.rawValue)\(PATH.rawValue)"
+    }
 }
 
 protocol IRickyMortyService {
@@ -18,6 +22,13 @@ protocol IRickyMortyService {
 
 struct RickyMortyService: IRickyMortyService {
     func fetchAllDatas() {
-        AF.request("")
+        AF.request(RickyMortyServiceEndPoint.characterPath()).responseDecodable(of: PostModel.self) {
+            (model) in
+            guard let data = model.value else  {
+                return
+            }
+            
+            
+        }
     }
 }
