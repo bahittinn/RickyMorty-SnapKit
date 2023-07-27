@@ -52,13 +52,14 @@ extension RickyMortyViewController: RickyMortyOutPut {
     }
     
     func saveDatas(values: [Result]) {
-        
+        results = values
+        tableView.reloadData()
     }
 }
 
 extension RickyMortyViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return results.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
