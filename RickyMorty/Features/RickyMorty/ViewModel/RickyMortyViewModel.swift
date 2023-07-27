@@ -16,19 +16,24 @@ protocol IRickyMortyViewModel {
     
 }
 
-struct RickyMortyViewModel: IRickyMortyViewModel {
+class RickyMortyViewModel: IRickyMortyViewModel {
+   
+    var rickyMortyCharacters: [Result] = []
+    var rickyMortyService: IRickyMortyService = RickyMortyService()
+    
+    init() {
+        rickyMortyService = RickyMortyService()
+    }
+    
     func fetchItems() {
-        
+        rickyMortyService.fetchAllDatas { (response) in
+            self.changeLoading()
+            self.rickyMortyCharacters = response ?? []
+        }
     }
     
     func changeLoading() {
         
     }
-    
-    var rickyMortyCharacters: [Result]
-    
-    var rickyMortyService: IRickyMortyService
-    
-    
 }
 
