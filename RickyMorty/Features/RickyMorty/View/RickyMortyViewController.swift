@@ -16,7 +16,7 @@ protocol RickyMortyOutPut {
 
 final class RickyMortyViewController: UIViewController {
     private let labelTitle: UILabel = UILabel()
-    private let box:UIView = UIView()
+    private let tableView:UITableView = UITableView()
     private let indicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
@@ -26,21 +26,20 @@ final class RickyMortyViewController: UIViewController {
     }
     private func configure() {
         view.addSubview(labelTitle)
-        view.addSubview(box)
+        view.addSubview(tableView)
         view.addSubview(indicator)
         drawDesign()
-        makeBox()
+        makeTableView()
         makeLabel()
         makeIndicator()
     }
     
     private func drawDesign() {
         DispatchQueue.main.async {
-            self.box.backgroundColor = .red
-            self.labelTitle.text = "bahittin"
+            self.labelTitle.text = "Ricky Morty"
             self.indicator.color = .red
-            self.indicator.startAnimating()
         }
+        indicator.startAnimating()
     }
 }
 
@@ -55,8 +54,8 @@ extension RickyMortyViewController: RickyMortyOutPut {
 }
 
 extension RickyMortyViewController {
-    private func makeBox() {
-        box.snp.makeConstraints { make in
+    private func makeTableView() {
+        tableView.snp.makeConstraints { make in
             make.top.equalTo(labelTitle.snp.bottom).offset(10)
             make.bottom.equalToSuperview()
             make.left.right.equalTo(labelTitle)
