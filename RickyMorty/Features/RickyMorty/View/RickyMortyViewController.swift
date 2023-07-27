@@ -7,6 +7,13 @@
 
 import UIKit
 import SnapKit
+
+protocol RickyMortyOutPut {
+    func changeLoading(isLoad: Bool)
+    func saveDatas(values: [Result])
+}
+
+
 final class RickyMortyViewController: UIViewController {
     private let labelTitle: UILabel = UILabel()
     private let box:UIView = UIView()
@@ -37,6 +44,16 @@ final class RickyMortyViewController: UIViewController {
     }
 }
 
+extension RickyMortyViewController: RickyMortyOutPut {
+    func changeLoading(isLoad: Bool) {
+        isLoad ? indicator.startAnimating() : indicator.stopAnimating()
+    }
+    
+    func saveDatas(values: [Result]) {
+        
+    }
+}
+
 extension RickyMortyViewController {
     private func makeBox() {
         box.snp.makeConstraints { make in
@@ -61,3 +78,5 @@ extension RickyMortyViewController {
         }
     }
 }
+
+

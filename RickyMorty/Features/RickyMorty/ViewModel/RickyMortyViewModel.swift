@@ -18,6 +18,7 @@ protocol IRickyMortyViewModel {
 
 class RickyMortyViewModel: IRickyMortyViewModel {
    
+    private var isLoading = false
     var rickyMortyCharacters: [Result] = []
     var rickyMortyService: IRickyMortyService = RickyMortyService()
     
@@ -26,9 +27,9 @@ class RickyMortyViewModel: IRickyMortyViewModel {
     }
     
     func fetchItems() {
-        rickyMortyService.fetchAllDatas { (response) in
-            self.changeLoading()
-            self.rickyMortyCharacters = response ?? []
+        rickyMortyService.fetchAllDatas { [weak self] (response) in
+            self?.changeLoading()
+            self?.rickyMortyCharacters = response ?? []
         }
     }
     
