@@ -19,6 +19,7 @@ final class RickyMortyViewController: UIViewController {
     private let tableView:UITableView = UITableView()
     private let indicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
+    private lazy var results: [Result] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -35,6 +36,8 @@ final class RickyMortyViewController: UIViewController {
     }
     
     private func drawDesign() {
+        tableView.delegate   = self
+        tableView.dataSource = self
         DispatchQueue.main.async {
             self.labelTitle.text = "Ricky Morty"
             self.indicator.color = .red
@@ -50,6 +53,15 @@ extension RickyMortyViewController: RickyMortyOutPut {
     
     func saveDatas(values: [Result]) {
         
+    }
+}
+
+extension RickyMortyViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 
