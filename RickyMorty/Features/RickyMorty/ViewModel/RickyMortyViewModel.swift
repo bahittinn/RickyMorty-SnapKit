@@ -16,6 +16,7 @@ protocol IRickyMortyViewModel {
     
 }
 
+//MARK: - ViewModel
 class RickyMortyViewModel: IRickyMortyViewModel {
    
     private var isLoading = false

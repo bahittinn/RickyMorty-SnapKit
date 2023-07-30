@@ -7,6 +7,7 @@
 
 import Alamofire
 
+//MARK: -  Service
 enum RickyMortyServiceEndPoint: String {
     case BASE_URL = "https://rickandmortyapi.com/api"
     case PATH     = "/character"

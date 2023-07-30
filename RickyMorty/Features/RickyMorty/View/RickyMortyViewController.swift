@@ -46,6 +46,7 @@ final class RickyMortyViewController: UIViewController {
     }
 }
 
+//MARK: - Output Section
 extension RickyMortyViewController: RickyMortyOutPut {
     func changeLoading(isLoad: Bool) {
         isLoad ? indicator.startAnimating() : indicator.stopAnimating()
@@ -57,6 +58,8 @@ extension RickyMortyViewController: RickyMortyOutPut {
     }
 }
 
+
+//MARK: - TableView Settings
 extension RickyMortyViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
@@ -66,6 +69,8 @@ extension RickyMortyViewController: UITableViewDelegate,UITableViewDataSource {
     }
 }
 
+
+//MARK: - UI Design
 extension RickyMortyViewController {
     private func makeTableView() {
         tableView.snp.makeConstraints { make in
