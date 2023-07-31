@@ -20,10 +20,15 @@ final class RickyMortyViewController: UIViewController {
     private let indicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     private lazy var results: [Result] = []
+    
+    lazy var viewModel: IRickyMortyViewModel = RickyMortyViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configure()
+        viewModel.setDelegate(output: self)
+        viewModel.fetchItems()
+        
     }
     private func configure() {
         view.addSubview(labelTitle)
@@ -65,6 +70,8 @@ extension RickyMortyViewController: UITableViewDelegate,UITableViewDataSource {
         return results.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = results[indexPath.row].name ?? "deneme"
         return UITableViewCell()
     }
 }
