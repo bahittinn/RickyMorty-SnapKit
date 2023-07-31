@@ -70,8 +70,9 @@ extension RickyMortyViewController: UITableViewDelegate,UITableViewDataSource {
         return results.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(results)
         let cell = UITableViewCell()
-        cell.textLabel?.text = results[indexPath.row].name ?? "deneme"
+        cell.textLabel?.text = results[indexPath.row].name!
         return UITableViewCell()
     }
 }
